@@ -15,7 +15,7 @@
     <div class="flex items-center justify-center min-h-screen">
         <div class="px-8 py-6 mx-4 mt-4 bg-white rounded-xl shadow-md">
             <h3 class="text-2xl font-bold text-center mb-6">Connexion</h3>
-            <form method="POST">
+            <form method="POST" action="tempPages/logToDatabase.php">
                 <div class="mb-4">
                     <label for="pseudo" class="block text-gray-700 font-bold mb-2">Pseudo</label>
                     <input type="text" name="pseudo" id="pseudo" placeholder="Entez votre pseudo" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>

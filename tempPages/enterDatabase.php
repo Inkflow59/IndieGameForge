@@ -29,7 +29,7 @@ if (!$db) {
     sleep(10);
     header("Location: ../index.php");
 }   else {
-    $inscription="INSERT INTO developpeur VALUES('$nom', '$prenom', '$nom', '$pays', '$start', '$birth', '$pseudo', '$mdp')";
+    $inscription="INSERT INTO developpeur VALUES('$nom', '$prenom', '$nom', '$pays', '$start', '$birth', '$pseudo', '$mdp');";
 
     if(mysqli_query($db, $inscription)) {
         echo "<h1 class='text-4xl font-bold text-green-800'>Utilisateur créé !</h1>";
