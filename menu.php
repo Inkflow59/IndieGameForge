@@ -52,8 +52,9 @@ if(!$db) {
     unset($_POST['password']);
   }
 
+  $pseudo=$_SESSION['pseudo'];
   $id=mysqli_query($db, "SELECT idDev FROM developpeur WHERE username='$pseudo';");
-  echo"<div class='flex h-screen items-center justify-center'><h1 class='text-5xl font-bold text-center text-gray-800'>Bienvenue, ".$_SESSION['pseudo'].", sur notre plateforme de création de jeux, IndieGameForge !</h1></div>";
+  echo"<div class='flex h-screen items-center justify-center'><h1 class='text-5xl font-bold text-center text-gray-800'>Bienvenue, $pseudo, sur notre plateforme de création de jeux, IndieGameForge !</h1></div>";
 }
 ?>
 </html>
