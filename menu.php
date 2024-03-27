@@ -13,7 +13,7 @@
             <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#create-game">Créer son jeu</a>
           </li>
           <li>
-            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#my-games">Consulter ses jeux</a>
+            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="userPages/userGames.php">Consulter ses jeux</a>
           </li>
           <li>
             <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#other-games">Consulter les autres jeux</a>
@@ -53,7 +53,11 @@ if(!$db) {
   }
 
   $pseudo=$_SESSION['pseudo'];
-  $id=mysqli_query($db, "SELECT idDev FROM developpeur WHERE username='$pseudo';");
+  $rechId=mysqli_query($db, "SELECT idDev FROM developpeur WHERE username='$pseudo';");
+  while($tab=mysqli_fetch_assoc($rechId)) {
+    $id=$tab['idDev'];
+  }
+  $_SESSION['id']=$id;
   echo"<div class='flex h-screen items-center justify-center'><h1 class='text-5xl font-bold text-center text-gray-800'>Bienvenue, $pseudo, sur notre plateforme de création de jeux, IndieGameForge !</h1></div>";
 }
 ?>
