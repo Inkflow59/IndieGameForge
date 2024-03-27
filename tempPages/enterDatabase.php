@@ -34,7 +34,7 @@ if (!$db) {
     if(mysqli_query($db, $inscription)) {
         echo "<h1 class='text-4xl font-bold text-green-800'>Utilisateur créé !</h1>";
         sleep(10);
-        header("Location: ../menu.php");
+        header("Location: ../menu.html");
     }   else {
         echo "<h1 class='text-4xl font-bold text-red-800'>Erreur de création dans la base de données !</h1>";
         sleep(10);

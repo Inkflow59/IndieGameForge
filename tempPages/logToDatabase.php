@@ -29,7 +29,7 @@ if (!$db) {
     if($connexion>=1) {
         echo "<h1 class='text-4xl font-bold text-green-800'>Utilisateur connecté !</h1>";
         sleep(10);
-        header("Location: ../menu.php");
+        header("Location: ../menu.html");
     }   else {
         echo "<h1 class='text-4xl font-bold text-red-800'>Vous n'avez pas été connecté !</h1>";
         sleep(10);
