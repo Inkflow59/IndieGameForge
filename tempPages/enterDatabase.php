@@ -31,7 +31,7 @@ $db=mysqli_connect("localhost","root","","indiegameforge");
 if (!$db) {
     echo "<h1 class='text-4xl font-bold text-red-800'>Erreur de connexion à la base de données !</h1>";
     sleep(10);
-    header("Location: ../index.php");
+    header("Location: ../index.html");
 }   else {
     $inscription="INSERT INTO developpeur VALUES('$nom', '$prenom', '$nom', '$pays', '$start', '$birth', DATE(NOW()), '$pseudo', '$mdp');";
 
@@ -42,7 +42,7 @@ if (!$db) {
     }   else {
         echo "<h1 class='text-4xl font-bold text-red-800'>Erreur de création dans la base de données !</h1>";
         sleep(10);
-        header("Location: ../index.php");
+        header("Location: ../index.html");
     }
 }
 ?>

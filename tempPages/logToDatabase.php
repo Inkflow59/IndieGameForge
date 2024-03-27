@@ -26,7 +26,7 @@ $db=mysqli_connect("localhost","root","","indiegameforge");
 if (!$db) {
     echo "<h1 class='text-4xl font-bold text-red-800'>Erreur de connexion à la base de données !</h1>";
     sleep(10);
-    header("Location: ../index.php");
+    header("Location: ../index.html");
 }   else {
     $connexion=mysqli_query($db,"SELECT idDev FROM developpeur WHERE username='$pseudo' AND password='$mdp';");
 
@@ -37,7 +37,7 @@ if (!$db) {
     }   else {
         echo "<h1 class='text-4xl font-bold text-red-800'>Vous n'avez pas été connecté !</h1>";
         sleep(10);
-        header("Location: ../index.php");
+        header("Location: ../index.html");
     }
 }
 ?>
