@@ -10,13 +10,13 @@
     <nav class="flex items-center justify-center bg-blue-500 text-white py-4" aria-label="Main navigation">
         <ul class="flex space-x-4">
           <li>
-            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#create-game">Créer son jeu</a>
+            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#">Créer son jeu</a>
           </li>
           <li>
-            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#my-games">Consulter ses jeux</a>
+            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#">Consulter ses jeux</a>
           </li>
           <li>
-            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#other-games">Consulter les autres jeux</a>
+            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#">Consulter les autres jeux</a>
           </li>
         </ul>
       </nav>
@@ -35,15 +35,22 @@ if(!$db) {
     echo "<p class='text-red-500 underline text-2xl font-bold'>Erreur de connexion à la base de données !</p>";
     header("Refresh:3");
 } else {
-    $jeuxRech=mysqli_query($db, "SELECT idJeu FROM jeu WHERE idDev=$id;");
-    $count=0;
-    while($row=mysqli_fetch_array($jeuxRech)) {
-        $count++;
-    }
+  //Comptage des jeux du développeur
+  $jeuxID=mysqli_query($db, "SELECT idJeu FROM jeu WHERE idDev=$id;");
+  $count=0;
+  while($idTab=mysqli_fetch_array($jeuxID)) {
+    $count++;
+  }
 
-    if($count==0) {
-        echo "<h2 class='text-2xl font-bold mb-6 mt-2 dark:text-white text-center'>Tiens ? Mais c'est vide !</h2>";
+  if($count==0) {
+    echo "<h2 class='text-2xl font-bold mb-6 mt-2 dark:text-white text-center'>Tiens ? Mais c'est vide !</h2>";
+} else {
+  $jeuxRech=mysqli_query($db,"SELECT * FROM jeu WHERE idUser=$id ORDER BY idJeu ASC;");
+  echo "<ul class='list-none offset-y-10'>";
+  while($jeuTab=mysqli_fetch_array($jeuxRech)) {
+    echo "<li>Premier item</li>";
     }
+  }
 }
 ?>
 </html>

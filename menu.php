@@ -10,13 +10,13 @@
     <nav class="flex items-center justify-center bg-blue-500 text-white py-4" aria-label="Main navigation">
         <ul class="flex space-x-4">
           <li>
-            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#create-game">Créer son jeu</a>
+            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#">Créer son jeu</a>
           </li>
           <li>
             <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="userPages/userGames.php">Consulter ses jeux</a>
           </li>
           <li>
-            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#other-games">Consulter les autres jeux</a>
+            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#">Consulter les autres jeux</a>
           </li>
         </ul>
       </nav>
