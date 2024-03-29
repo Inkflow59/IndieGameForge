@@ -3,9 +3,9 @@ USE IndieGameForge;
 
 DROP TABLE IF EXISTS Developpeur ;
 CREATE TABLE Developpeur (idDev INT AUTO_INCREMENT NOT NULL,
-nomDev VARCHAR(50),
-prenomDev VARCHAR(50),
-paysDev VARCHAR(50),
+nomDev VARCHAR(100),
+prenomDev VARCHAR(100),
+paysDev VARCHAR(100),
 anneeDebutDev YEAR,
 dateNaissance DATE,
 dateInscription DATE,
@@ -15,12 +15,12 @@ PRIMARY KEY (idDev)) ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS Jeu ;
 CREATE TABLE Jeu (idJeu INT AUTO_INCREMENT NOT NULL,
-nomJeu VARCHAR(50),
+nomJeu VARCHAR(150),
 typeJeu VARCHAR(50),
-studioDevJeu VARCHAR(50),
+studioDevJeu VARCHAR(150),
 descriptionJeu TEXT,
-moteurLanguageJeu VARCHAR(50),
-plateforme VARCHAR(50),
+moteurLanguageJeu VARCHAR(150),
+plateforme VARCHAR(150),
 dateSortie DATE,
 idDev INT,
 PRIMARY KEY (idJeu)) ENGINE=InnoDB;
