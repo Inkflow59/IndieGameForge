@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Jeux de l'utilisateur - IndieGameForge</title>
 </head>
-<body>
+<body class="bg-gray-100">
     <nav class="flex items-center justify-center bg-blue-500 text-white py-4" aria-label="Main navigation">
         <ul class="flex space-x-4">
           <li>
-            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#">Créer son jeu</a>
+            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="userCreateGames.php">Créer son jeu</a>
           </li>
           <li>
             <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#">Consulter ses jeux</a>
@@ -45,10 +45,12 @@ if(!$db) {
   if($count==0) {
     echo "<h2 class='text-2xl font-bold mb-6 mt-2 dark:text-white text-center'>Tiens ? Mais c'est vide !</h2>";
 } else {
-  $jeuxRech=mysqli_query($db,"SELECT * FROM jeu WHERE idUser=$id ORDER BY idJeu ASC;");
-  echo "<ul class='list-none offset-y-10'>";
+  $jeuxRech=mysqli_query($db,"SELECT nomJeu, typeJeu, studioDevJeu, descriptionJeu, moteurLanguageJeu, plateforme, dateSortie FROM jeu WHERE idDev=$id ORDER BY idJeu ASC;");
   while($jeuTab=mysqli_fetch_array($jeuxRech)) {
-    echo "<li>Premier item</li>";
+    echo "<p class='font-italic mb-6 mt-4 dark:text-white text-center'>";
+    echo $jeuTab['nomJeu']." : Développé par ".$jeuTab['studioDevJeu']." avec ".$jeuTab['moteurLanguageJeu']." de type ".$jeuTab['typeJeu'].".<br>";
+    echo $jeuTab['descriptionJeu']."<br>";
+    echo "Sortie prévue sur ".$jeuTab['plateforme']." le ".$jeuTab['dateSortie']."</p>";
     }
   }
 }
