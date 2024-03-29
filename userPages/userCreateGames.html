@@ -28,37 +28,41 @@
     </div>
 
       <form method="POST" action="../tempPages/createGamesDatabase.php">
-        <div class="mb-4">
-            <label for="titre" class="block text-gray-700 font-bold mb-2">Titre du jeu</label>
-            <input type="text" name="titre" id="titre" placeholder="Entrez le titre de votre jeu" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
-        </div>
-        <div class="mb-4">
-            <label for="type" class="block text-gray-700 font-bold mb-2">Type du jeu</label>
-            <input type="text" name="type" id="type" placeholder="Entrez le type de jeu (RPG, Action, ...)" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
-        </div>
-        <div class="mb-4">
-            <label for="dev" class="block text-gray-700 font-bold mb-2">Studio de développement</label>
-            <input type="text" name="dev" id="dev" placeholder="Entrez qui a développé votre jeu" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
-        </div>
-        <div class="mb-4">
-            <label for="description" class="block text-gray-700 font-bold mb-2">Description du jeu</label>
-            <input type="text" name="description" id="description" placeholder="Décrivez-nous votre jeu" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
-        </div>
-        <div class="mb-4">
-            <label for="langue" class="block text-gray-700 font-bold mb-2">Moteur ou language de programmation</label>
-            <input type="text" name="langue" id="langue" placeholder="Quel moteur ou language de programmation a été utilisé ?" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
-        </div>
-        <div class="mb-4">
-            <label for="plateforme" class="block text-gray-700 font-bold mb-2">Plateforme de sortie</label>
-            <input type="text" name="plateforme" id="plateforme" placeholder="Sur quelle plateforme sortez-vous votre jeu ?" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
-        </div>
-        <div class="mb-4">
-            <label for="date" class="block text-gray-700 font-bold mb-2">Date de sortie prévisionnelle</label>
-            <input type="date" name="date" id="date" placeholder="Décrivez-nous votre jeu" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
-        </div>
+        <div class="flex items-center justify-center min-h-screen">
+          <div class="px-14 py-12 mx-4 mt-4 bg-white rounded-xl shadow-md">
+            <div class="mb-4">
+                <label for="titre" class="block text-gray-700 font-bold mb-2">Titre du jeu</label>
+                <input type="text" name="titre" id="titre" placeholder="Entrez le titre de votre jeu" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="type" class="block text-gray-700 font-bold mb-2">Type du jeu</label>
+                <input type="text" name="type" id="type" placeholder="Entrez le type de jeu (RPG, Action, ...)" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="dev" class="block text-gray-700 font-bold mb-2">Studio de développement</label>
+                <input type="text" name="dev" id="dev" placeholder="Entrez qui a développé votre jeu" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="description" class="block text-gray-700 font-bold mb-2">Description du jeu</label>
+                <input type="text" name="description" id="description" placeholder="Décrivez-nous votre jeu" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="langue" class="block text-gray-700 font-bold mb-2">Moteur ou language de programmation</label>
+                <input type="text" name="langue" id="langue" placeholder="Quel moteur ou language de programmation a été utilisé ?" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="plateforme" class="block text-gray-700 font-bold mb-2">Plateforme de sortie</label>
+                <input type="text" name="plateforme" id="plateforme" placeholder="Sur quelle plateforme sortez-vous votre jeu ?" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="date" class="block text-gray-700 font-bold mb-2">Date de sortie prévisionnelle</label>
+                <input type="date" name="date" id="date" placeholder="Décrivez-nous votre jeu" class="appearance-none border rounded-md w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
+            </div>
 
-        <div class="flex items-center justify-between">
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Créer son jeu !</button>
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Créer son jeu !</button>
+            </div>
+          </div>
         </div>
       </form>
 </body>
