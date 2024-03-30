@@ -20,6 +20,9 @@
           </li>
         </ul>
       </nav>
+
+    <div class="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200 flex items-center justify-center"><a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md focus:outline-none" href="modifyUser.php">Mettre à jour ses infos</a>
+</div>
 </body>
 
 <?php

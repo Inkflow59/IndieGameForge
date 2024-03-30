@@ -55,7 +55,8 @@ if(!$db) {
     while($tabMoy=mysqli_fetch_array($moyenneReq)) {
       $moyenne=$tabMoy["AVG(noteJeu)"];
     }
-    echo "La moyenne des notes reçues par les autres développeurs est de $moyenne/10</p><br>";
+    echo "La moyenne des notes reçues par les autres développeurs est de $moyenne/10<br>";
+    echo "<form method='POST' action='modifyGames.php><button type='submit' value='".$jeuTab['idJeu']."' id='idJeu' name='idJeu'class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-lg shadow-md focus:outline-none'>Modifier les informations du jeu</button></form></p><br>";
     }
   }
 }
