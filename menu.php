@@ -16,7 +16,7 @@
             <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="userPages/userGames.php">Consulter ses jeux</a>
           </li>
           <li>
-            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#">Consulter les autres jeux</a>
+            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="userPages/allGames.php">Consulter les autres jeux</a>
           </li>
         </ul>
       </nav>

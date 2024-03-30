@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 //Récupération des données utilisateur
 $pseudo=$_SESSION['pseudo'];
 $id=$_SESSION['id'];
@@ -34,7 +35,7 @@ if(!$db) {
         sleep(5);
         header("Location: ../userPages/userGames.php");
     }   else {
-        echo "<h1 class='text-4xl font-bold text-red-800'>Erreur de connexion à la base de données !</h1>";
+        echo "<h1 class='text-4xl font-bold text-red-800'>Erreur lors de le création du jeu !</h1>";
         sleep(5);
         header("Location: ../userPages/userCreateGames.html");
     }

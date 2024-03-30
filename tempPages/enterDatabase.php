@@ -21,13 +21,13 @@ if (!$db) {
     $pays=mysqli_real_escape_string($db,$pays);
     $mdp=mysqli_real_escape_string($db, $mdp);
 
-    //Déclaration des varibales de session
-    session_start();
-    $_SESSION['pseudo']=$pseudo;
-
     $inscription="INSERT INTO developpeur(`nomDev`, `prenomDev`, `paysDev`, `anneeDebutDev`, `dateNaissance`, `dateInscription`, `username`, `password`) VALUES('$nom', '$prenom', '$pays', '$start', '$birth', DATE(NOW()), '$pseudo', '$mdp');";
 
     if(mysqli_query($db, $inscription)) {
+        //Déclaration des varibales de session
+        session_start();
+        $_SESSION['pseudo']=$pseudo;
+
         echo "<h1 class='text-4xl font-bold text-green-800'>Utilisateur créé !</h1>";
         sleep(5);
         header("Location: ../menu.php");

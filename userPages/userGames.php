@@ -16,14 +16,14 @@
             <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#">Consulter ses jeux</a>
           </li>
           <li>
-            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#">Consulter les autres jeux</a>
+            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="allGames.php">Consulter les autres jeux</a>
           </li>
         </ul>
       </nav>
 </body>
 
 <?php
-///Fetch des variables sessions
+//Fetch des variables sessions
 session_start();
 $id=$_SESSION['id'];
 $pseudo=$_SESSION['pseudo'];
@@ -45,12 +45,17 @@ if(!$db) {
   if($count==0) {
     echo "<h2 class='text-2xl font-bold mb-6 mt-2 dark:text-white text-center'>Tiens ? Mais c'est vide !</h2>";
 } else {
-  $jeuxRech=mysqli_query($db,"SELECT nomJeu, typeJeu, studioDevJeu, descriptionJeu, moteurLanguageJeu, plateforme, dateSortie FROM jeu WHERE idDev=$id ORDER BY idJeu ASC;");
+  $jeuxRech=mysqli_query($db,"SELECT * FROM jeu WHERE idDev=$id ORDER BY idJeu ASC;");
   while($jeuTab=mysqli_fetch_array($jeuxRech)) {
     echo "<p class='font-italic mb-6 mt-4 dark:text-white text-center'>";
     echo $jeuTab['nomJeu']." : Développé par ".$jeuTab['studioDevJeu']." avec ".$jeuTab['moteurLanguageJeu']." de type ".$jeuTab['typeJeu'].".<br>";
     echo $jeuTab['descriptionJeu']."<br>";
-    echo "Sortie prévue sur ".$jeuTab['plateforme']." le ".$jeuTab['dateSortie']."</p>";
+    echo "Sortie prévue sur ".$jeuTab['plateforme']." le ".$jeuTab['dateSortie']."<br>";
+    $moyenneReq=mysqli_query($db, "SELECT AVG(noteJeu) FROM note WHERE idJeu=".$jeuTab['idJeu'].";");
+    while($tabMoy=mysqli_fetch_array($moyenneReq)) {
+      $moyenne=$tabMoy["AVG(noteJeu)"];
+    }
+    echo "La moyenne des notes reçues par les autres développeurs est de $moyenne/10</p><br>";
     }
   }
 }
