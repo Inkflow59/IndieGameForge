@@ -10,7 +10,7 @@
     <nav class="flex items-center justify-center bg-blue-500 text-white py-4" aria-label="Main navigation">
         <ul class="flex space-x-4">
           <li>
-            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="userCreateGames.php">Créer son jeu</a>
+            <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="userCreateGames.html">Créer son jeu</a>
           </li>
           <li>
             <a class="hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md font-medium text-sm" href="#">Consulter ses jeux</a>
