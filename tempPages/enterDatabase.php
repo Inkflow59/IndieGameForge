@@ -21,7 +21,7 @@ if (!$db) {
     $pays=mysqli_real_escape_string($db,$pays);
     $mdp=mysqli_real_escape_string($db, $mdp);
 
-    $inscription="INSERT INTO developpeur(`nomDev`, `prenomDev`, `paysDev`, `anneeDebutDev`, `dateNaissance`, `dateInscription`, `username`, `password`) VALUES('$nom', '$prenom', '$pays', '$start', '$birth', DATE(NOW()), '$pseudo', '$mdp');";
+    $inscription="INSERT INTO developpeur(nomDev, prenomDev, paysDev, anneeDebutDev, dateNaissance, dateInscription, username, password) VALUES('$nom', '$prenom', '$pays', '$start', '$birth', DATE(NOW()), '$pseudo', '$mdp');";
 
     if(mysqli_query($db, $inscription)) {
         //Déclaration des varibales de session
