@@ -52,9 +52,9 @@ if(!$db) {
             echo $tabJeux['nomJeu']." : Développé par ".$tabJeux['studioDevJeu']." avec ".$tabJeux['moteurLanguageJeu']." de type ".$tabJeux['typeJeu'].".<br>";
             echo $tabJeux['descriptionJeu']."<br>";
             echo "Sortie prévue sur ".$tabJeux['plateforme']." le ".$tabJeux['dateSortie']."<br>";
-            $moyenneReq=mysqli_query($db, "SELECT AVG(noteJeu) FROM note WHERE idJeu=".$tabJeux['idJeu'].";");
+            $moyenneReq=mysqli_query($db, "SELECT ROUND(AVG(noteJeu),2) FROM note WHERE idJeu=".$tabJeux['idJeu'].";");
             while($tabMoy=mysqli_fetch_array($moyenneReq)) {
-                $moyenne=$tabMoy["AVG(noteJeu)"];
+                $moyenne=$tabMoy["ROUND(AVG(noteJeu),2)"];
             }
             echo "La moyenne des notes reçues par les autres développeurs est de $moyenne/10</p>";
 
@@ -65,9 +65,9 @@ if(!$db) {
             }
 
             if($noteOupas==0) {
-                echo "<p class='fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200'><form method='POST' action='../tempPages/notingGames.php' class='flex items-center space-x-2 bg-white rounded-lg p-2 shadow-md'><label for='rating' class='sr-only'>Noter le jeu</label><input type='number' step=0.1 min='1' max='10' id='rating' name='rating' class='block w-1/4 appearance-none bg-gray-200 border-0 text-gray-500 py-1 px-2 leading-tight focus:outline-none' placeholder='Notez le jeu ".$tabJeux['nomJeu']."'><button type='submit' value ='".$tabJeux['idJeu']."' id='idJeu' name='idJeu'class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-lg shadow-md focus:outline-none'>Envoyer la note</button></form></p></div><br>";
+                echo "<div class='flex items-center justify-center'><p class='fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200 text-center'><form method='POST' action='../tempPages/notingGames.php' class='flex items-center space-x-2 bg-white rounded-lg p-2 shadow-md'><label for='rating' class='sr-only'>Noter le jeu</label><input type='number' step=0.1 min='1' max='10' id='rating' name='rating' class='block w-1/4 appearance-none bg-gray-200 border-0 text-gray-500 py-1 px-2 leading-tight focus:outline-none' placeholder='Notez le jeu ".$tabJeux['nomJeu']."'><button type='submit' value ='".$tabJeux['idJeu']."' id='idJeu' name='idJeu'class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-lg shadow-md focus:outline-none'>Envoyer la note</button></form></p></div></div><br>";
             }   else {
-                echo "<p class='text-xl font-bold text-green-800'>Vous avez déjà noté ce jeu !</p></div><br>";
+                echo "<div class='flex items-center justify-center'><p class='text-xl font-bold text-green-800 text-center'>Vous avez déjà noté ce jeu !</p></div></div><br>";
             }
         }
     }

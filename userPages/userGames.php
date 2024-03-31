@@ -28,6 +28,12 @@ session_start();
 $id=$_SESSION['id'];
 $pseudo=$_SESSION['pseudo'];
 
+if(isset($_SESSION['idMod'])) {
+  unset($_SESSION['idMod']);
+}
+if(isset($_POST['idJeu'])) {
+  unset($_POST['idJeu']);
+}
 echo "<h1 class='text-4xl font-bold mb-2 mt-24 dark:text-white text-center'>Quelle productivité, $pseudo ! Voici vos jeux :</h1>";
 //Connexion à la BDD
 $db=mysqli_connect("localhost","root","","indiegameforge");
@@ -51,12 +57,12 @@ if(!$db) {
     echo $jeuTab['nomJeu']." : Développé par ".$jeuTab['studioDevJeu']." avec ".$jeuTab['moteurLanguageJeu']." de type ".$jeuTab['typeJeu'].".<br>";
     echo $jeuTab['descriptionJeu']."<br>";
     echo "Sortie prévue sur ".$jeuTab['plateforme']." le ".$jeuTab['dateSortie']."<br>";
-    $moyenneReq=mysqli_query($db, "SELECT AVG(noteJeu) FROM note WHERE idJeu=".$jeuTab['idJeu'].";");
+    $moyenneReq=mysqli_query($db, "SELECT ROUND(AVG(noteJeu),2) FROM note WHERE idJeu=".$jeuTab['idJeu'].";");
     while($tabMoy=mysqli_fetch_array($moyenneReq)) {
-      $moyenne=$tabMoy["AVG(noteJeu)"];
+      $moyenne=$tabMoy["ROUND(AVG(noteJeu),2)"];
     }
     echo "La moyenne des notes reçues par les autres développeurs est de $moyenne/10<br>";
-    echo "<form method='POST' action='modifyGames.php><button type='submit' value='".$jeuTab['idJeu']."' id='idJeu' name='idJeu'class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-lg shadow-md focus:outline-none'>Modifier les informations du jeu</button></form></p><br>";
+    echo "<div class='flex items-center justify-center'><form method='POST' action='modifyGames.php'><button type='submit' value='".$jeuTab['idJeu']."' id='idJeu' name='idJeu'class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-lg shadow-md focus:outline-none justify-center text-center'>Modifier les informations du jeu</button></form></div></p><br>";
     }
   }
 }
